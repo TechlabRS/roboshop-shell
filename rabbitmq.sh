@@ -17,8 +17,9 @@ curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/sc
 func_stat_check $?
 
 func_print_head "Install ErLang & RabbitMQ"
-yum install erlang rabbitmq-server -y &>>$log_file
+yum install rabbitmq-server -y &>>$log_file
 func_stat_check $?
+#erlang installation removed
 
 func_print_head "Start RabbitMQ Service"
 systemctl enable rabbitmq-server &>>$log_file
